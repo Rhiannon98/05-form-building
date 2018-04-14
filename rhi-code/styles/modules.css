@@ -47,7 +47,19 @@
   font-weight: bold;
   text-decoration: none;
 }
-
+#article-export {
+  float: right;
+}
+#article-export:after {
+  content: ' ';
+  display:table-cell;
+  clear:both;
+}
+#article-export input {
+  width: 45%;
+  opacity: .5;
+  display: block;
+}
 #article-export label {
   font-size: .8em;
   font-style: italic;
