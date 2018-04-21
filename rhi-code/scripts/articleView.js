@@ -102,7 +102,7 @@ articleView.create = () => {
     category: $('#category').val(),
     author: $('#author').val(),
     authorUrl: $('#authorUrl').val(),
-    publishedOn: $('#publishedOn').val(),
+    publishedOn: $('#publishedOn').length ? new Date() : null,
     body: $('#body').val()
   }
   let article = new Article(aobj);
@@ -119,7 +119,7 @@ articleView.create = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// This function is called on the index page to ensure that everything JS wise gets rendered last, that way any errors in the JS will not affect the CSS or the user seeing the page. The only thing affected by the JS not running is the functionality of the dropdown menus and some of the articles not appearing.
 articleView.initIndexPage = () => {
   articles.forEach(article => $('#articles').append(article.toHtml()));
   articleView.populateFilters();
